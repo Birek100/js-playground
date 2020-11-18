@@ -1,17 +1,18 @@
-const array = [1, 50, 28, 13, 9, 57, 87, 35, 187]
-const testArray = [3, 7, 1, 16, 12, 19, 25, 13 ,10]
+const array = [15, 8, 3, 1, 21, 17, 9]
 function bubbel(arr){
-	for (let i = 0; i < array.length; i++){
-			if (arr[i] > arr [i + 1]) {
-				let tmp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = tmp;
+	for (let i = 0; i < arr.length - 1; i++){
+		for (let j = 0 ; j < arr.length -1 - i; j++){
+			if (arr[j] > arr [j + 1]) {
+				let tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
 		    }
-			console.log(arr)
+		    
+		}
 	}
+	console.log(arr);
+	return arr;
 }
-
 bubbel(array);
-bubbel(testArray);
 
 module.exports = bubbel;
