@@ -10,15 +10,12 @@ class Node {
   find(value) {
     for (let i = 0; i < this.children.length; i++) {
       if (this.children[i].value == value) {
-        console.log(this.children[i]);
         return this.children[i];
       } else if (this.children[i] == this.children[this.children.length - 1]) {
         for (let n = 0; n < this.children.length; n++) {
           this.children[n].find(value);
         }
-      } else {
-        console.log(this.children[i].value);
-      }
+      } 
     }
   }
 }
@@ -41,4 +38,3 @@ node4.addChild(node6);
 node5.addChild(node7);
 
 let result = root.find('value-7');
-console.log(result);
