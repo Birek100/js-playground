@@ -15,7 +15,7 @@ class Node {
         for (let n = 0; n < this.children.length; n++) {
           this.children[n].find(value);
         }
-      } 
+      }
     }
   }
 }
