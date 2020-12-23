@@ -7,17 +7,34 @@ class Node {
   addChild(child) {
     this.children.push(child);
   }
-  find(value) {
+
+  findval(value) {
+
+  	for (const element of this.children) {
+  		if (element.value == value) {
+  			console.log(true)
+  			//break;
+  		}
+  		console.log(element)
+  		element.findval(value);
+	}
+  }
+
+ /* find(value) {
     for (let i = 0; i < this.children.length; i++) {
       if (this.children[i].value == value) {
-        return this.children[i];
+      	
+      	 //this.output = "test"
+      	 
+      
       } else if (this.children[i] == this.children[this.children.length - 1]) {
         for (let n = 0; n < this.children.length; n++) {
           this.children[n].find(value);
         }
+      
       }
     }
-  }
+  } */
 }
 
 const root = new Node('val');
@@ -37,4 +54,5 @@ node4.addChild(node5);
 node4.addChild(node6);
 node5.addChild(node7);
 
-let result = root.find('value-7');
+let result = root.findval('value-7');
+console.log(result);
