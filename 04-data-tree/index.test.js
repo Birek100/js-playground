@@ -27,8 +27,10 @@ function check(obj) {
 }
 
 test('find chosen node in data tree', () => {
-	const f = jest.fn()
-	f(node9)
+	const f = jest.fn(root.findNode(node9, check));
+
+
+	f(node9);
 	
   expect(f).toHaveBeenCalledWith(node9);
 });
