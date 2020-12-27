@@ -1,25 +1,4 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.children = [];
-  }
-
-  addChild(child) {
-    this.children.push(child);
-  }
-
-  findNode(node, callback) {
-    console.log(this.value);
-    if (this.value == node.value) {
-     return callback(node);
-    } else {
-      for (let i = 0; i < this.children.length; i++) {
-        this.children[i].findNode(node, callback);
-      }
-    }
-  }
-}
-
+const Node = require('./index');
 
 const root = new Node('value-root');
 const node1 = new Node('value-1');
@@ -41,12 +20,15 @@ node2.addChild(node6);
 node6.addChild(node7);
 node6.addChild(node8);
 node7.addChild(node9);
+console.log(root)
 
-function check(node) {
-  console.log(node);
+function check(obj) {
+  console.log(obj);
 }
 
-root.findNode(node9, check);
-
-
-module.exports = Node;
+test('find chosen node in data tree', () => {
+	const f = jest.fn()
+	f(node9)
+	
+  expect(f).toHaveBeenCalledWith(node9);
+});
