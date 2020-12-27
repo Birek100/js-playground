@@ -26,8 +26,8 @@ const node2 = new Node('value-2');
 const node3 = new Node('value-3');
 const node4 = new Node('value-4');
 const node5 = new Node('value-5');
-const node6 = new Node('value-6');
 const node7 = new Node('value-7');
+const node6 = new Node('value-6');
 const node8 = new Node('value-8');
 
 root.addChild(node1);
@@ -38,5 +38,10 @@ node4.addChild(node5);
 node4.addChild(node6);
 node5.addChild(node7);
 node1.addChild(node8);
+function check(node) {
+  console.log(node);
+}
+root.findNode(node7, check);
+//check(node7)
 
-root.findNode(node7);
+module.exports = Node;
