@@ -20,17 +20,21 @@ node2.addChild(node6);
 node6.addChild(node7);
 node6.addChild(node8);
 node7.addChild(node9);
-console.log(root)
 
 function check(obj) {
   console.log(obj);
 }
 
-test('find chosen node in data tree', () => {
-	const f = jest.fn(root.findNode(node9, check));
+describe('find chosen node in data tree', () => {
+  test('find node 9', () => {
+    const f = jest.fn();
+    root.findNode(node9, f);
+    expect(f).toHaveBeenCalledWith(node9);
+  });
 
-
-	f(node9);
-	
-  expect(f).toHaveBeenCalledWith(node9);
+  test('find root', () => {
+    const f = jest.fn();
+    root.findNode(root, f);
+    expect(f).toHaveBeenCalledWith(root);
+  });
 });
