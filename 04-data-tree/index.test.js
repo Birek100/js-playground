@@ -26,13 +26,13 @@ function check(obj) {
 }
 
 describe('find chosen node in data tree', () => {
-  test('find node 9', () => {
+  test('should find proper node', () => {
     const f = jest.fn();
     root.findNode(node9, f);
     expect(f).toHaveBeenCalledWith(node9);
   });
 
-  test('find root', () => {
+  test('should find root', () => {
     const f = jest.fn();
     root.findNode(root, f);
     expect(f).toHaveBeenCalledWith(root);
