@@ -9,7 +9,6 @@ class Node {
   }
 
   findNode(node, callback) {
-    console.log(this.value);
     if (this.value == node.value) {
       return callback(node);
     } else {
